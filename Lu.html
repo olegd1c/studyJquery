@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+<body>
+<lu id = "menu">
+    <li><a href="Ссылка 1">Ссылка 1</a></li>
+    <li><a href="Ссылка 2">Ссылка 2</a></li>
+    <li><a href="Ссылка 3">Ссылка 3</a></li>
+    <li><a href="Ссылка 4">Ссылка 4</a></li>
+    <li><a href="Ссылка 5">Ссылка 5</a></li>
+</lu>
+
+<a href="Ссылка 6">Ссылка 6</a>
+
+<script type="text/javascript">
+    var link = $("#menu li a:first");
+    alert(link.html());
+
+    link = $("#menu li a:eq(2)");
+    alert(link.html());
+</script>
+
+</body>
+</html>

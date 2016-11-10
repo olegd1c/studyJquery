@@ -1,0 +1,35 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="test" onclick="$('#test').hide()">Test</div>
+
+        <div class="test" >Test 1</div>
+        <div class="test" >Test 2</div>
+        <p class="test" >Test 3</p>
+        <p class="test" >Test 4</p>
+
+    <script class="test" type="text/javascript">
+
+        var test2 = $('div.test');
+        for(var i =0; test2.length;i++){
+            test2.get(i).style.color = "red";
+            test2.get(i).style.background = "blue";
+        }
+
+        setTimeout("$('p.test').get(0).style.color = 'green'",2000);
+    </script>
+                <script class="test" type="text/javascript">
+                    setTimeout("$('p.test').get(0).style.color = 'green'",2000);
+                    var test3 = $('p.test');
+                for(var i =0; test3.length;i++){
+                    test3.get(i).style.background = "blue";
+                }
+                </script>
+
+    </body>
+    </html>

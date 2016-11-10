@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>insertAfter demo</title>
+  <style>
+
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+        $(document).on("click","#add_comment",function(){
+          var form = $("#form");
+          form.css("display","block");
+
+          var add_comment = $("#add_comment");
+          add_comment.css("display", "none");
+          //$("#add_comment").replaceWith(form);
+        });
+              $(document).on("click","#done",function(){
+                var comment = $("#comment").val();
+                //alert(comment);
+                $("<p>"+comment+"</p>").appendTo("#comments");
+                $("#comment").val("");
+                /*var add_comment = $("#add_comment");
+                add_comment.css("display","block");
+                $("#form").replaceWith(add_comment);
+                //add_comment.css("display", "none");*/
+              });
+
+              $(document).on("click","#closeComment",function(){
+                var form = $("#form");
+                form.css("display","none");
+
+                var add_comment = $("#add_comment");
+                add_comment.css("display", "block");
+                //$("#add_comment").replaceWith(form);
+              });
+      }
+    );
+  </script>
+
+</head>
+<body>
+
+<div id="comments">
+  <p>Комментарий 1</p>
+  <p>Комментарий 2</p>
+  <p>Комментарий 3</p>
+
+</div>
+
+<form name="form" id="form" style="display: none" onsubmit="return false" action="#" method="post">
+  <textarea id="comment" name="comment" cols="40" rows="5">
+
+
+  </textarea><br>
+
+  <input type="submit" name="send" value="Добавить комментарий" id="done"><br>
+  <input type="submit" name="send" value="Закончить комментирование" id="closeComment">
+
+
+</form>
+
+<a href="#" onclick="return false" id="add_comment"> Добавить комментарий </a>
+
+<script>
+
+</script>
+
+</body>
+</html>

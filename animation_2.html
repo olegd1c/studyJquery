@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>insertAfter demo</title>
+  <style>
+
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+  <script type="text/javascript">
+
+    function val_radio(){
+      var state = $("input[name='animation']:checked").val();
+      return state;
+    }
+    function hideComments(){
+      $("#hide").hide();
+      $("#show").show();
+
+      switch (val_radio()) {
+        case "slide":
+          $("#comments").slideUp(1000);
+        case "fade":
+          $("#comments").fadeOut(1000);
+      }
+    };
+
+    function showComments(){
+      //alert(222);
+      $("#hide").show();
+      $("#show").hide();
+
+      switch (val_radio()) {
+        case "slide":
+          $("#comments").slideDown(1000);
+        case "fade":
+          $("#comments").fadeIn(1000);
+      }
+    };
+
+    $(document).ready(function(){
+      $("#hide").bind("click",hideComments);
+      $("#show").bind("click",showComments);
+    });
+
+  </script>
+
+
+</head>
+<body>
+
+<script type="text/javascript">
+  //showComments();
+</script>
+
+<a href="#" onclick="return false" id="show"> Показать комментарий </a>
+<a href="#" onclick="return false" id="hide" style="display: none"> Cкрыть комментарий </a>
+
+<form name = "name" id="name">
+  <label for="fade">fade</label>
+  <input id = "fade" type="radio" name="animation" value="fade"/>
+  <label for="slide">slide</label>
+  <input id = "slide" type="radio" name="animation" value="slide"/>
+
+
+</form>
+
+<div id="comments" style="display: none">
+  <p>Комментарий 1</p>
+  <p>Комментарий 2</p>
+  <p>Комментарий 3</p>
+
+</div><div id="comments2">
+  <p>Комментарий 4</p>
+  <p>Комментарий 5</p>
+  <p>Комментарий 6</p>
+
+</div>
+
+
+
+
+<script>
+
+</script>
+
+</body>
+</html>

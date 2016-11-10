@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        function init(){
+            $("#message").html("");
+            $('#img1').hide();
+            $('#img2').hide();
+        }
+        function valid(){
+            init();
+            var state = $("input[name='sex']:checked").val();
+
+            if(!state) return $("#message").html("<font style='color: red'>Укажите Ваш пол</font><br>");
+            //alert(state);
+            if (state == 'male') $('#img1').show();
+            if (state == 'female') $('#img2').show();
+        }
+    </script>
+
+</head>
+<body>
+    <form name = "name" id="name">
+        <label for="female">Женский</label>
+        <input id = "female" type="radio" name="sex" value="female"/>
+        <label for="male">Мужской</label>
+        <input id = "male" type="radio" name="sex" value="male"/>
+        <br><br>
+        <span id="message"></span>
+        <input id="bone" type="button" value="Готово" onclick="return valid()">
+    </form>
+
+    <img src="male.jpg" style="display: none" id="img1" alt="1" title="М"/>
+    <img src="female.jpg" style="display: none" id="img2" alt="2" title="Ж"/>
+</body>
+</html>

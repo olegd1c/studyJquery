@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+<body>
+    <img src="1.jpg" alt="Изображение" title="Изображение"/> <br>
+    <img src="2.jpg" /><br>
+    <img src="3.jpg" /><br>
+    <img src="4.jpg" alt="Изображение" title="Изображение"/>
+
+
+    <script>
+        /*var img1 = $("img[alt]");k
+        alert("alt: " +img1.length);
+
+        var img2 = $("img[title]");
+        alert("title: " +img2.length);*/
+
+        $(":not(img[alt])").attr("alt","jquery");
+        $("img").not("img[title]").attr("title","jquery_t");
+
+        /*var img1 = $("img[alt]");
+        alert("alt: " +img1.length);
+
+        var img2 = $("img[title]");
+        alert("title: " +img2.length);*/
+
+
+        var elements = $("img");
+        //alert("elements: " +img2.length);
+
+        var text="";
+        for(var i=0;i < elements.length;i++)
+            text += elements[i].alt + "\n";
+            //text += elements[i].className + "\n";
+
+        alert(text);
+    </script>
+
+
+
+</body>
+</html>

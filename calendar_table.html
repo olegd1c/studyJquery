@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Каледарь</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <style type="text/css">
+        /*.calend_cell{
+
+            background: yellow;
+            border: 1;
+        }*/
+
+
+        TABLE {
+            width: 300px; /* Ширина таблицы */
+            border-collapse: collapse; /* Убираем двойные линии между ячейками */
+        }
+        TD, TH {
+            padding: 3px; /* Поля вокруг содержимого таблицы */
+            border: 1px solid black; /* Параметры рамки */
+            width: 300px;
+        }
+        TH {
+            background: #b0e0e6; /* Цвет фона */
+        }
+
+
+
+    </style>
+
+    <script type="text/javascript">
+        var dateCalendar = new Date();
+        var endMonth = new Date();
+        var month = ['Январь','Февраль','Март','Апрель','Май','Июнь',
+            'Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'];
+
+        //alert(dateCalendar.getDay());
+
+        function nextManth(){
+            $("#tab_calend").empty();
+            dateCalendar.setMonth(dateCalendar.getMonth()+1);
+            createCalendar();
+            //alert("nextManth");
+        }
+
+        function prevManth(){
+            $("#tab_calend").empty();
+            dateCalendar.setMonth(dateCalendar.getMonth()-1);
+            createCalendar();
+            //alert("nextManth");
+        }
+
+        function setDate(count){
+            dateCalendar.setDate(dateCalendar.getDate()+count);
+        }
+        function addDate(){
+            dateCalendar.setDate(dateCalendar.getDate()+1);
+        }
+        function createCalendar(){
+
+            var count_date=new Date(dateCalendar.getYear(), dateCalendar.getMonth() + 1, 0).getDate();
+            dateWeek = dateCalendar.getDay();
+            str = 1;
+            textNameManth = ""+month[dateCalendar.getMonth()]+" "+dateCalendar.getFullYear();
+            //alert(textNameManth);
+
+            //$("<p id='nameManth'>"+textNameManth+"<p>").appendTo("#tab_calend");
+            $("#nameManth").text(textNameManth);
+
+            $("<tr id='th1'>").appendTo("#tab_calend");
+            $("<td>Пн</td> <td>Вт</td> <td>Ср</td> <td>Чт</td> <td>Пт</td> <td>Сб</td> <td>Нд</td>").appendTo("#th1");
+            if (dateWeek>1){
+                $("<tr id=tr"+str+">").appendTo("#tab_calend");
+                for (ii = 1;ii < dateWeek;ii++) {
+                    $("<td class='calend_cell'>"+""+ "</td>").appendTo("#tr"+str);
+            }
+        }
+
+            for (ii = 1;ii <= count_date;ii++) {
+
+                if (dateWeek == 1) {
+                   $("<tr id=tr"+str+">").appendTo("#tab_calend");
+                }
+
+                textCell = ii;
+
+                $("<td class='calend_cell'>"+textCell+ "</td>").appendTo("#tr"+str);
+
+                if (dateWeek == 7) {
+                    dateWeek=0;
+                    //$("<tr>").appendTo("#cal_date");
+                    str++;
+                }
+                dateWeek++;
+            }
+        }
+
+        function init(){
+           $("#addManth").bind("click",nextManth);
+            $("#minManth").bind("click",prevManth);
+            createCalendar();
+            // $(document).on("click","#addManth",nextManth);
+
+        }
+
+        $(document).ready(init);
+
+
+
+    </script>
+</head>
+<body>
+
+<form id="calendar_form">
+    <a id="minManth" href="#" onclick="return false">Предыдущий месяц</a> <a id="addManth" href="#" onclick="return false">Следующий месяц</a>
+    <p> </p>
+    <p id="nameManth"> </p>
+
+    <table id="tab_calend">
+
+    </table>
+    <script type="text/javascript">
+        //alert (dateCalendar);
+        //setDate();
+        //alert(dateCalendar);
+        //
+    </script>
+</form>
+</body>
+</html>

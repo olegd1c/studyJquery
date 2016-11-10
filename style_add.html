@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+<body>
+    <div id ="div">Блок</div>
+
+    <script>
+        $("#div").css("font-size","25px");
+        $("#div").css("color","red");
+        $("#div").css("background","blue");
+        $("#div").css("width","250px");
+        $("#div").css("height",function(){
+            return $(this).width();
+
+        });
+    </script>
+
+</body>
+</html>

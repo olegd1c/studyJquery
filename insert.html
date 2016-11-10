@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+
+    <div id="div">Блок</div>
+
+    <script type="text/javascript">
+       $('<p> Текст вставили в начало div </p>').prepend("div");
+       $("<p> Текст вставили в начало div 2 </p>").prependTo("div");
+       $("<p> Текст вставили перед div </p>").insertBefore("div","div");
+       $("<p> Текст вставили после div </p>").insertAfter("div");
+
+    </script>
+
+</body>
+</html>

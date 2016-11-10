@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>insertAfter demo</title>
+  <style>
+
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+  <script type="text/javascript">
+
+    $(document).ready(init);
+
+    function init() {
+        $("#img").bind("click", imgClick);
+
+        $('#img').hover(function () {
+            $('#img').animate({
+                width: $( this).width()+40,
+                height: $( this).height()+40
+            }, 200);
+        }, function () {
+            $('#img').animate({
+                width: $( this).width()-40,
+                height: $( this).height()-40
+            }, 200);
+        })
+
+        $('#feimg').hover(function () {
+            $('#feimg').animate({
+                width: $( this).width()+40,
+                height: $( this).height()+40
+            }, 200);
+        }, function () {
+            $('#feimg').animate({
+                width: $( this).width()-40,
+                height: $( this).height()-40
+            }, 200);
+        })
+
+        function imgClick(){
+      $(event.target). parent().css(
+              "text-align","center");
+            $( this ).animate({
+     width: $( this).width()*3,
+     height: $( this).height()*3
+
+     }, 3000 );
+    }
+}
+
+
+    /*$(document).ready(function(){
+      $("#img").bind("click",function (){
+        $(event.target).parent().css("text-align","center");
+        $( this ).animate({
+          width: $( this).width()*3,
+          height: $( this).height()*3
+
+        }, 3000 );S
+        //alert(22);
+      })();
+    });
+*/
+  </script>
+
+
+</head>
+<body>
+
+<script type="text/javascript">
+  //showComments();
+</script>
+  <p id="test">
+    <img src="male.jpg" alt="изображение" title="изображение" id="img">
+      <img src="female.jpg" alt="изображение" title="изображение" id="feimg">
+      test
+  </p>
+</div>
+
+
+
+
+<script>
+  // Using multiple unit types within one animation.
+
+  /*$( "#img" ).click(function() {
+    $( "#img" ).animate({
+      width: "70%",
+      opacity: 0.4,
+      marginLeft: "0.6in",
+      fontSize: "3em",
+      borderWidth: "10px"
+    }, 1500 );
+  });
+  */
+</script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>insertAfter demo</title>
+  <style>
+
+  </style>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+  <script type="text/javascript">
+
+    function hideComments(){
+      //alert(111);
+      $("#comments").hide(1000, function () {
+        $("#hide").hide();
+        $("#show").show();
+      });
+    };
+    function showComments(){
+      //alert(222);
+      $("#comments").show(1000, function () {
+        $("#hide").show();
+        $("#show").hide();
+      });
+    };
+
+    $(document).ready(function(){
+      $("#hide").bind("click",hideComments);
+      $("#show").bind("click",showComments);
+    });
+
+  </script>
+
+
+</head>
+<body>
+
+<script type="text/javascript">
+  //showComments();
+</script>
+
+<a href="#" onclick="return false" id="show"> Показать комментарий </a>
+<a href="#" onclick="return false" id="hide" style="display: none"> Cкрыть комментарий </a>
+
+<div id="comments" style="display: none">
+  <p>Комментарий 1</p>
+  <p>Комментарий 2</p>
+  <p>Комментарий 3</p>
+
+</div>
+
+
+
+
+<script>
+
+</script>
+
+</body>
+</html>
