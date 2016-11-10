@@ -3,22 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Каледарь</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <style>
-        ul.hr {
-             /* Обнуляем значение отступов */
-            padding: 4px; /* Значение полей */
-            /*text-align:center;*/
-
-        }
-        ul.hr li {
-            display: inline; /* Отображать как строчный элемент */
-            margin-right: 0px; /* Отступ слева */
-            border: 1px solid #000; /* Рамка вокруг текста */
-            padding: 0px; /* Поля вокруг текста */
-            width: 50px;
-        }
-    </style>
 
     <script type="text/javascript">
         var dateCalendar = new Date();
@@ -59,10 +45,10 @@
             //$("<p id='nameManth'>"+textNameManth+"<p>").appendTo("#tab_calend");
             $("#nameManth").text(textNameManth);
 
-            $("<ul class='hr' id='th1'>").appendTo("#tab_calend");
-            $("<li>Пн</li> <li>Вт</li> <li>Ср</li> <li>Чт</li> <li>Пт</li> <li>Сб</li> <li>Нд</li>").appendTo("#th1");
+            $("<ul class='list-inline' id='th1'>").appendTo("#tab_calend");
+            $("<li>Пн</li><li>Вт</li><li>Ср</li><li>Чт</li><li>Пт</li><li>Сб</li><li>Нд</li>").appendTo("#th1");
             if (dateWeek>1){
-                $("<ul class='hr' id=tr"+str+">").appendTo("#tab_calend");
+                $("<ul class='list-inline' id=tr"+str+">").appendTo("#tab_calend");
                 for (ii = 1;ii < dateWeek;ii++) {
                     $("<li'>"+"     "+ "</li>").appendTo("#tr"+str);
             }
@@ -71,7 +57,7 @@
             for (ii = 1;ii <= count_date;ii++) {
 
                 if (dateWeek == 1) {
-                   $("<ul class='hr' id=tr"+str+">").appendTo("#tab_calend");
+                   $("<ul class='list-inline' id=tr"+str+">").appendTo("#tab_calend");
                 }
 
                 textCell = ii;
@@ -102,13 +88,13 @@
     </script>
 </head>
 <body>
-<div>
+<div class="container">
 <form id="calendar_form">
     <a id="minManth" href="#" onclick="return false">Предыдущий месяц</a> <a id="addManth" href="#" onclick="return false">Следующий месяц</a>
     <p> </p>
     <p id="nameManth"> </p>
 
-    <div id="tab_calend">
+    <div class = "row" id="tab_calend">
 
     </div>
     <script type="text/javascript">
