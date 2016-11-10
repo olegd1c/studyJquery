@@ -64,7 +64,11 @@
             //var firstDayInstance = new Date(year, month, 1);
             //var firstDay = firstDayInstance.getDay()+8;
             startMonth = new Date(dateCalendar.getYear(), dateCalendar.getMonth(), 1);
-            dateWeek = startMonth.getDay()+2;
+            var dateWeek = 0;
+            //alert("startMonth: "+startMonth.getDay());
+            if (startMonth.getDay() == 6) {
+                dateWeek = 1;
+            } else dateWeek = startMonth.getDay()+2;
             //alert(dateWeek);
             str = 1;
             textNameManth = "" + month[dateCalendar.getMonth()] + " " + dateCalendar.getFullYear();
